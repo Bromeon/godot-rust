@@ -2,12 +2,15 @@ use gdnative::prelude::*;
 
 #[derive(NativeClass)]
 #[inherit(Node)]
-struct HelloWorld;
+struct HelloWorld {
+    #[property]
+    i: u32
+}
 
 #[gdnative::methods]
 impl HelloWorld {
     fn new(_owner: &Node) -> Self {
-        HelloWorld
+        HelloWorld { i: 0 }
     }
 
     #[export]
